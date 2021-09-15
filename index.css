@@ -1,0 +1,21 @@
+.hidden {
+    display: none;
+}
+
+#gameField{
+    width: fit-content;
+    height: fit-content;
+    padding: 4px;
+    background: hsl(0deg 0% 0%/0%);
+
+    display: grid;
+    grid-template-columns: repeat(20,20px);
+    grid-template-rows: repeat(20,20px);
+    grid-gap: 4px;
+}
+
+.cell {
+    border: 1px solid black;
+    background: hsl(0deg 0% 0%/0%);
+
+}
