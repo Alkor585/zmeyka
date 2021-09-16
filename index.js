@@ -10,10 +10,10 @@ button.addEventListener('click', pressed);
 
 const cells = [];
 let snakeCoords = [[2, 1], [2, 2], [2, 3], [2, 4], [2, 5]];
+const colCount = 50;
+const rowCount = 50;
 
 function createGameField() {
-  const colCount = 50;
-  const rowCount = 50;
   const container = document.querySelector('#gameField');
   for (let rowIndex = 0; rowIndex < rowCount; rowIndex++) {
     for (let colIndex = 0; colIndex < colCount; colIndex++) {
@@ -83,5 +83,24 @@ function keyBinding(event) {
   }
 
 };
-
 window.addEventListener('keydown', keyBinding);
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+
+function fruitAdd() {
+  let fruitX = getRandomIntInclusive(0, colCount - 1);
+  let fruitY = getRandomIntInclusive(0, rowCount - 1);
+
+  if (!snakeCoords.some(([x, y]) => fruitX === x && fruitY === y)) {
+    cells.find((cell) => cell.row === fruitY && cell.col === fruitX).el.classList.add('fruit')
+  }
+
+}
+
+window.addEventListener('click', fruitAdd);

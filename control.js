@@ -1,25 +1,16 @@
-function keyBinding(event) {
-    if( event.code === 'ArrowRight') {
-        moveDelta[0] = 1;
-        moveDelta[1] = 0;
-    } else if (
-        event.code === 'ArrowLeft') {
-            moveDelta[0] = -1;
-            moveDelta[1] = 0;
-        } else if (
-            event.code==='ArrowDown'){
-                moveDelta[0] = 0;
-                moveDelta[1] = 1;
-            } else if(event.code==='ArrowUp'){
-                moveDelta[0] = 0;
-                moveDelta[1] = -1;
-            }
-       
 
-    {
+function fruitAdd() {
+    let fruitIndex = getRandomIntInclusive(0, cells.length - 1);
+    function fruitCoordX() {
+      
+      let fruitX = getRandomIntInclusive(0, cells.length - 1)}
+    function fruitCoordY() {
+      
+      let fruitY = etRandomIntInclusive(0, cells.length - 1)}
+   console.log(fruitX,fruitY);
+    }
 
-    
-    // event.code === '';
 
-  }
-};
+    function fruitCoordX() {
+      
+        let fruitX = getRandomIntInclusive(0, cells.length - 1)}
