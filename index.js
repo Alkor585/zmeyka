@@ -9,7 +9,7 @@ function pressed() {
 button.addEventListener('click', pressed);
 
 const cells = [];
-let snakeCoords = [[2, 1], [2, 2], [2, 3], [2, 4], [2, 5]];
+let snakeCoords = [[25, 20], [25, 21], [25, 22], [25, 23], [25, 24], [25, 25], [25, 26], [25, 27], [25, 28], [25, 29], [25, 30]];
 const colCount = 50;
 const rowCount = 50;
 
@@ -28,22 +28,35 @@ function createGameField() {
         col: colIndex,
         el: cellElement,
         isShoved: true,
+        isFruit: false,
       };
       cells.push(cell);
     }
   }
 }
 
+let n = 0;
+
 function tick() {
   move();
+  if (n % 12 === 0) fruitAdd();
+  const head = snakeCoords[snakeCoords.length - 1]
+  if (cells.find((cell) => cell.col === head[0] && cell.row === head[1] && cell.isFruit)) {
+
+    cells.find((cell) => cell.el.classList.remove('head',move),
+    cell.el.classList.add('head',move))
+
+  }
   for (const cell of cells) {
     if (snakeCoords.some(([x, y]) => x === cell.col && y === cell.row)) {
       cell.el.classList.add('snake');
     } else {
       cell.el.classList.remove('snake');
     }
+    if (cell.isFruit) cell.el.classList.add('fruit');
   }
-  setTimeout(tick, 1000);
+  n += 1;
+  setTimeout(tick, 200);
 }
 
 const prevMoveDelta = [0, 1];
@@ -98,9 +111,13 @@ function fruitAdd() {
   let fruitY = getRandomIntInclusive(0, rowCount - 1);
 
   if (!snakeCoords.some(([x, y]) => fruitX === x && fruitY === y)) {
-    cells.find((cell) => cell.row === fruitY && cell.col === fruitX).el.classList.add('fruit')
+    const cell = cells.find((cell) => cell.row === fruitY && cell.col === fruitX);
+    cell.isFruit = true;
+    console.log(fruitX, fruitY);
   }
-
 }
 
-window.addEventListener('click', fruitAdd);
+function fruitRemove() {
+  cell.isFruit.classList.remove('fruit');
+  cell.isFruit.classList.add('cell');
+}

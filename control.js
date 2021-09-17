@@ -1,16 +1,10 @@
-
 function fruitAdd() {
-    let fruitIndex = getRandomIntInclusive(0, cells.length - 1);
-    function fruitCoordX() {
-      
-      let fruitX = getRandomIntInclusive(0, cells.length - 1)}
-    function fruitCoordY() {
-      
-      let fruitY = etRandomIntInclusive(0, cells.length - 1)}
-   console.log(fruitX,fruitY);
+    let fruitX = getRandomIntInclusive(0, colCount - 1);
+    let fruitY = getRandomIntInclusive(0, rowCount - 1);
+  
+    if (!snakeCoords.some(([x, y]) => fruitX === x && fruitY === y)) {
+      cells.find((cell) => cell.row === fruitY && cell.col === fruitX).el.classList.add('fruit')
     }
-
-
-    function fruitCoordX() {
-      
-        let fruitX = getRandomIntInclusive(0, cells.length - 1)}
+    setTimeout(fruitAdd, 6000);
+  
+  }

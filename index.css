@@ -6,7 +6,7 @@
     width: fit-content;
     height: fit-content;
     padding: 4px;
-    background: hsl(0deg 0% 0%/0%);
+    background: rgb(133, 86, 42);
 
     display: grid;
     grid-template-columns: repeat(50,10px);
@@ -21,7 +21,7 @@
 }
 
 .snake {
-    background:  green;
+    background:  linear-gradient(to bottom,white,green,darkgreen)
 }
 
 .fruit {
