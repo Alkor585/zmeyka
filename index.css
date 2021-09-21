@@ -6,12 +6,10 @@
     width: fit-content;
     height: fit-content;
     padding: 4px;
-    background: rgb(133, 86, 42);
+    background: url(grass1.jpeg);
 
     display: grid;
-    grid-template-columns: repeat(50,10px);
-    grid-template-rows: repeat(50,10px);
-    border: 2px solid black;
+    margin: auto;
 }
 
 .cell {
@@ -21,9 +19,29 @@
 }
 
 .snake {
-    background:  linear-gradient(to bottom,white,green,darkgreen)
+    background:  linear-gradient(to bottom, pink,white);
+    border-radius :  4px;
 }
 
 .fruit {
-    background-color: red;
+    background: url(apple.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sign {
+   
+    font-style: initial;
+    text-align: center;
+    font-size: large;
+    color: black;
+
+    padding: 50px;
+    
+
+}
+
+.buttonRestart {
+    align-items: center;
 }
