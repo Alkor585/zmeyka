@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
 
-    <title>Змейка</title>
+<head>
 
-  
+  <title>Змейка</title>
+
+
   <link href="index.css" rel="stylesheet">
 
-  </head>
-  <body>
+</head>
 
+<body>
+
+
+
+  <button id="pressMe" type="button" class="button">
+    <span>
+      Играть
+    </span>
+
+
+  </button>
+  <div id="secretBlock" class="hidden">
+
+    <div id="gameField" class="container">
+
+
+    </div>
+
+  </div>
+  <div>
+    <h3 id='signn' class="hidden">
+    Конец игры
+    </h3>
   
-      
-        <button id="pressMe" type="button">
-          
-          Играть
+  <button id="buttonRestart" class='hidden' type="button">
+    <span>
+      Попробовать снова      
+    </span>
+  </button>
+  </div>
+  <script src="index.js"></script>
 
 
-        </button>
-        <div id="secretBlock" class="hidden">
 
-          <div id="gameField" class="container">
+</body>
 
-
-          </div>
-          
-        </div>
-        <div id='signn' class='hidden'>
-          Слава змейке 
-
-        </div>
-        <button id="buttonRestart" class='hidden' type="button">
-          Попробовать снова
-        </button>
-      
- <script src="index.js"></script>
-
- 
-
-  </body>
 </html>

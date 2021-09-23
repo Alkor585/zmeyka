@@ -2,14 +2,23 @@
     display: none;
 }
 
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #gameField{
     width: fit-content;
     height: fit-content;
     padding: 4px;
-    background: url(grass1.jpeg);
+    background: url(minecraft_dirt.jpg);
+    background-size: 100px;
+    background-repeat: repeat;
 
     display: grid;
     margin: auto;
+    cursor: none;
 }
 
 .cell {
@@ -19,29 +28,121 @@
 }
 
 .snake {
-    background:  linear-gradient(to bottom, pink,white);
+    background:  url(1632382820524.png);
     border-radius :  4px;
+    background-size: 10px;
 }
 
 .fruit {
-    background: url(apple.png);
+    background: url(1632380193748.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 30px;
+
 }
 
 .sign {
+
    
-    font-style: initial;
+    font-style: italic;
     text-align: center;
     font-size: large;
     color: black;
 
-    padding: 50px;
-    
+    padding: 30px;
+  
 
 }
+
+.button {
+    background-color: white;
+    transition-duration: 0.2s;
+    padding: 12px 28px;
+    border-radius: 12px;
+    cursor: pointer;
+    border-color: green;
+    font-style: italic;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover {
+    margin:0 auto;
+    display:block;
+    background-color: green;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover span {
+    padding-right: 25px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
 
 .buttonRestart {
-    align-items: center;
+    background-color: white;
+    border-color: red;
+    transition-duration: 0.2s;
+    padding: 12px 28px;
+    border-radius: 12px;
+    cursor: pointer;
+  
 }
+.buttonRestart span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .buttonRestart span:after {
+    content: '\21BA';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+
+  }
+
+.buttonRestart:hover {
+    background-color: red;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.buttonRestart:hover span {
+    padding-right: 25px;
+  }
+
+  .buttonRestart:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+.watermelon {
+    background: url(1632387178174.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+}
+

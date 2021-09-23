@@ -19,8 +19,8 @@ const rowCount = 50;
 
 function createGameField() {
   function monitorSettings() {
-    const cellSize=Math.floor(Math.min(window.innerHeight, window.innerWidth) / 50)
-  
+    const cellSize = Math.floor(Math.min(window.innerHeight, window.innerWidth) / 50)
+
 
     gameField.style['grid-template-columns'] = `repeat(50, ${cellSize}px)`;
     gameField.style['grid-template-rows'] = `repeat(50, ${cellSize}px)`;
@@ -66,7 +66,8 @@ function tick() {
     fruitExistNumber -= 1;
   } else needGrowUp = false;
   for (const cell of cells) {
-    if (snakeCoords.some(([x, y]) => x === cell.col && y === cell.row)) {
+    const snakeBodyCellIndex = snakeCoords.findIndex(([x, y]) => x === cell.col && y === cell.row);
+    if (snakeBodyCellIndex > -1) {
       cell.el.classList.add('snake');
     } else {
       cell.el.classList.remove('snake');
@@ -160,7 +161,6 @@ function checkSnakeIsAlive([headX, headY]) {
     index !== snakeCoords.length - 1 && headX === x && headY === y
   ));
 }
-function buttonRestartPressed(){
- window.location.reload()
+function buttonRestartPressed() {
+  window.location.reload()
 }
- 
